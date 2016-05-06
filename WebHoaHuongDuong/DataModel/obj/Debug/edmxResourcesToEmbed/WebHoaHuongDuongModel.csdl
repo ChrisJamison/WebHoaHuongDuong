@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WebHoaHuongDuongModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="WebHoaHuongDuongDBEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Bills" EntityType="WebHoaHuongDuongModel.Bill" />
+    <EntitySet Name="Carts" EntityType="WebHoaHuongDuongModel.Cart" />
+    <EntitySet Name="CartDetails" EntityType="WebHoaHuongDuongModel.CartDetail" />
+    <EntitySet Name="Categories" EntityType="WebHoaHuongDuongModel.Category" />
+    <EntitySet Name="Customers" EntityType="WebHoaHuongDuongModel.Customer" />
+    <EntitySet Name="Products" EntityType="WebHoaHuongDuongModel.Product" />
+    <EntitySet Name="sysdiagrams" EntityType="WebHoaHuongDuongModel.sysdiagram" />
+    <AssociationSet Name="FK_BILL_CART" Association="WebHoaHuongDuongModel.FK_BILL_CART">
+      <End Role="Cart" EntitySet="Carts" />
+      <End Role="Bill" EntitySet="Bills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CART_CUSTOMER" Association="WebHoaHuongDuongModel.FK_CART_CUSTOMER">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Cart" EntitySet="Carts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CART_DETAIL_CART" Association="WebHoaHuongDuongModel.FK_CART_DETAIL_CART">
+      <End Role="Cart" EntitySet="Carts" />
+      <End Role="CartDetail" EntitySet="CartDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CART_DETAIL_PRODUCT" Association="WebHoaHuongDuongModel.FK_CART_DETAIL_PRODUCT">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="CartDetail" EntitySet="CartDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PRODUCT_CATEGORY" Association="WebHoaHuongDuongModel.FK_PRODUCT_CATEGORY">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Bill">
+    <Key>
+      <PropertyRef Name="Bill_ID" />
+    </Key>
+    <Property Name="Bill_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Cart_ID" Type="Int32" />
+    <Property Name="DateOfCreation" Type="DateTime" Precision="0" />
+    <Property Name="isPayed" Type="Boolean" Nullable="false" />
+    <Property Name="isOrdered" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Cart" Relationship="WebHoaHuongDuongModel.FK_BILL_CART" FromRole="Bill" ToRole="Cart" />
+  </EntityType>
+  <EntityType Name="Cart">
+    <Key>
+      <PropertyRef Name="Cart_ID" />
+    </Key>
+    <Property Name="Cart_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Customer_ID" Type="Int32" />
+    <Property Name="DateOfCreation" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Bills" Relationship="WebHoaHuongDuongModel.FK_BILL_CART" FromRole="Cart" ToRole="Bill" />
+    <NavigationProperty Name="Customer" Relationship="WebHoaHuongDuongModel.FK_CART_CUSTOMER" FromRole="Cart" ToRole="Customer" />
+    <NavigationProperty Name="CartDetails" Relationship="WebHoaHuongDuongModel.FK_CART_DETAIL_CART" FromRole="Cart" ToRole="CartDetail" />
+  </EntityType>
+  <EntityType Name="CartDetail">
+    <Key>
+      <PropertyRef Name="Cart_Detail_ID" />
+    </Key>
+    <Property Name="Cart_Detail_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Product_ID" Type="Int32" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="Cart_ID" Type="Int32" />
+    <NavigationProperty Name="Cart" Relationship="WebHoaHuongDuongModel.FK_CART_DETAIL_CART" FromRole="CartDetail" ToRole="Cart" />
+    <NavigationProperty Name="Product" Relationship="WebHoaHuongDuongModel.FK_CART_DETAIL_PRODUCT" FromRole="CartDetail" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Category_ID" />
+    </Key>
+    <Property Name="Category_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Parent_ID" Type="Int32" />
+    <Property Name="Level" Type="Int32" />
+    <NavigationProperty Name="Products" Relationship="WebHoaHuongDuongModel.FK_PRODUCT_CATEGORY" FromRole="Category" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="Customer_ID" />
+    </Key>
+    <Property Name="Customer_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="LastName" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="Phone" Type="String" MaxLength="11" Unicode="true" FixedLength="true" />
+    <Property Name="Address" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="LastDateAccess" Type="DateTime" Precision="0" />
+    <Property Name="IdentifyCardNumber" Type="String" Nullable="false" MaxLength="9" Unicode="true" FixedLength="true" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Carts" Relationship="WebHoaHuongDuongModel.FK_CART_CUSTOMER" FromRole="Customer" ToRole="Cart" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Product_ID" />
+    </Key>
+    <Property Name="Product_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Category_ID" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="URL" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+    <Property Name="Image" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+    <Property Name="DateUpload" Type="DateTime" Precision="0" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
+    <Property Name="NumberInStock" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CartDetails" Relationship="WebHoaHuongDuongModel.FK_CART_DETAIL_PRODUCT" FromRole="Product" ToRole="CartDetail" />
+    <NavigationProperty Name="Category" Relationship="WebHoaHuongDuongModel.FK_PRODUCT_CATEGORY" FromRole="Product" ToRole="Category" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_BILL_CART">
+    <End Role="Cart" Type="WebHoaHuongDuongModel.Cart" Multiplicity="0..1" />
+    <End Role="Bill" Type="WebHoaHuongDuongModel.Bill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cart">
+        <PropertyRef Name="Cart_ID" />
+      </Principal>
+      <Dependent Role="Bill">
+        <PropertyRef Name="Cart_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CART_CUSTOMER">
+    <End Role="Customer" Type="WebHoaHuongDuongModel.Customer" Multiplicity="0..1" />
+    <End Role="Cart" Type="WebHoaHuongDuongModel.Cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Customer_ID" />
+      </Principal>
+      <Dependent Role="Cart">
+        <PropertyRef Name="Customer_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CART_DETAIL_CART">
+    <End Role="Cart" Type="WebHoaHuongDuongModel.Cart" Multiplicity="0..1" />
+    <End Role="CartDetail" Type="WebHoaHuongDuongModel.CartDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cart">
+        <PropertyRef Name="Cart_ID" />
+      </Principal>
+      <Dependent Role="CartDetail">
+        <PropertyRef Name="Cart_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CART_DETAIL_PRODUCT">
+    <End Role="Product" Type="WebHoaHuongDuongModel.Product" Multiplicity="0..1" />
+    <End Role="CartDetail" Type="WebHoaHuongDuongModel.CartDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Product_ID" />
+      </Principal>
+      <Dependent Role="CartDetail">
+        <PropertyRef Name="Product_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PRODUCT_CATEGORY">
+    <End Role="Category" Type="WebHoaHuongDuongModel.Category" Multiplicity="1" />
+    <End Role="Product" Type="WebHoaHuongDuongModel.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Category_ID" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="Category_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

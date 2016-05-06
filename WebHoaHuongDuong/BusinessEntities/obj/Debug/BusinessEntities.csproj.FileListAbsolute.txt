@@ -1,0 +1,9 @@
+D:\Project\WebHoaHuongDuong\WebHoaHuongDuong\BusinessEntities\bin\Debug\BusinessEntities.dll
+D:\Project\WebHoaHuongDuong\WebHoaHuongDuong\BusinessEntities\bin\Debug\BusinessEntities.pdb
+D:\Project\WebHoaHuongDuong\WebHoaHuongDuong\BusinessEntities\obj\Debug\BusinessEntities.csprojResolveAssemblyReference.cache
+D:\Project\WebHoaHuongDuong\WebHoaHuongDuong\BusinessEntities\obj\Debug\BusinessEntities.dll
+D:\Project\WebHoaHuongDuong\WebHoaHuongDuong\BusinessEntities\obj\Debug\BusinessEntities.pdb
+D:\Project\WebHoaHuongDuong\WebHoaHuongDuong\BusinessEntities\bin\Debug\DataModel.dll
+D:\Project\WebHoaHuongDuong\WebHoaHuongDuong\BusinessEntities\bin\Debug\EntityFramework.dll
+D:\Project\WebHoaHuongDuong\WebHoaHuongDuong\BusinessEntities\bin\Debug\DataModel.pdb
+D:\Project\WebHoaHuongDuong\WebHoaHuongDuong\BusinessEntities\bin\Debug\EntityFramework.xml
