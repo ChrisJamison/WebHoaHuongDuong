@@ -29,6 +29,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MixedMinimumRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -43,6 +44,15 @@
       <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common">
+      <HintPath>..\packages\Ninject.Web.Common.3.2.3.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc">
+      <HintPath>..\packages\Ninject.MVC3.3.2.1.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -117,6 +127,9 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="WebActivatorEx">
+      <HintPath>..\packages\WebActivatorEx.2.0.6\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
     <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0\lib\net40\WebMatrix.Data.dll</HintPath>
@@ -182,9 +195,11 @@
     <Compile Include="App_Start\AuthConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
@@ -195,6 +210,46 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="catalog\view\javascript\addthis_widget.js" />
+    <Content Include="catalog\view\javascript\bootstrap\js\bootstrap.min.js" />
+    <Content Include="catalog\view\javascript\common.js" />
+    <Content Include="catalog\view\javascript\font-awesome\css\font-awesome.min.css" />
+    <Content Include="catalog\view\javascript\gmap\gmap3.infobox.js" />
+    <Content Include="catalog\view\javascript\gmap\gmap3.min.js" />
+    <Content Include="catalog\view\javascript\jquery\colorpicker\css\colorpicker.css" />
+    <Content Include="catalog\view\javascript\jquery\colorpicker\images\colorpicker_background.png" />
+    <Content Include="catalog\view\javascript\jquery\colorpicker\js\colorpicker.js" />
+    <Content Include="catalog\view\javascript\jquery\datetimepicker\bootstrap-datetimepicker.min.css" />
+    <Content Include="catalog\view\javascript\jquery\datetimepicker\bootstrap-datetimepicker.min.js" />
+    <Content Include="catalog\view\javascript\jquery\datetimepicker\moment.js" />
+    <Content Include="catalog\view\javascript\jquery\elevatezoom\elevatezoom-min.js" />
+    <Content Include="catalog\view\javascript\jquery\jquery-2.1.1.min.js" />
+    <Content Include="catalog\view\javascript\jquery\magnific\jquery.magnific-popup.min.js" />
+    <Content Include="catalog\view\javascript\jquery\magnific\magnific-popup.css" />
+    <Content Include="catalog\view\javascript\jquery\owl-carousel\owl.carousel.css" />
+    <Content Include="catalog\view\javascript\jquery\owl-carousel\owl.carousel.min.js" />
+    <Content Include="catalog\view\javascript\jquery\pavblog_script.js" />
+    <Content Include="catalog\view\javascript\layerslider\jquery.themepunch.plugins.min.js" />
+    <Content Include="catalog\view\javascript\layerslider\jquery.themepunch.revolution.min.js" />
+    <Content Include="catalog\view\js\analytics.js" />
+    <Content Include="catalog\view\js\jquery-migrate-1.0.0.js" />
+    <Content Include="catalog\view\js\widget_v2.142.js" />
+    <Content Include="catalog\view\theme\megashop\image\pavmap\cluster-m1.png" />
+    <Content Include="catalog\view\theme\megashop\image\shop-cart.png" />
+    <Content Include="catalog\view\theme\megashop\javascript\common.js" />
+    <Content Include="catalog\view\theme\megashop\stylesheet\bootstrap.css" />
+    <Content Include="catalog\view\theme\megashop\stylesheet\font.css" />
+    <Content Include="catalog\view\theme\megashop\stylesheet\paneltool.css" />
+    <Content Include="catalog\view\theme\megashop\stylesheet\pavblog.css" />
+    <Content Include="catalog\view\theme\megashop\stylesheet\pavmap.css" />
+    <Content Include="catalog\view\theme\megashop\stylesheet\pavnewsletter.css" />
+    <Content Include="catalog\view\theme\megashop\stylesheet\pavreassurance.css" />
+    <Content Include="catalog\view\theme\megashop\stylesheet\sliderlayer\assets\left.png" />
+    <Content Include="catalog\view\theme\megashop\stylesheet\sliderlayer\assets\loader.gif" />
+    <Content Include="catalog\view\theme\megashop\stylesheet\sliderlayer\assets\right.png" />
+    <Content Include="catalog\view\theme\megashop\stylesheet\sliderlayer\assets\timer.png" />
+    <Content Include="catalog\view\theme\megashop\stylesheet\sliderlayer\css\typo.css" />
+    <Content Include="catalog\view\theme\megashop\stylesheet\stylesheet.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -249,9 +304,126 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="CustomerFile\catalog\view\javascript\addthis_widget.js" />
+    <Content Include="CustomerFile\catalog\view\javascript\bootstrap\js\bootstrap.min.js" />
+    <Content Include="CustomerFile\catalog\view\javascript\common.js" />
+    <Content Include="CustomerFile\catalog\view\javascript\font-awesome\css\font-awesome.min.css" />
+    <Content Include="CustomerFile\catalog\view\javascript\gmap\gmap3.infobox.js" />
+    <Content Include="CustomerFile\catalog\view\javascript\gmap\gmap3.min.js" />
+    <Content Include="CustomerFile\catalog\view\javascript\jquery\colorpicker\css\colorpicker.css" />
+    <Content Include="CustomerFile\catalog\view\javascript\jquery\colorpicker\images\colorpicker_background.png" />
+    <Content Include="CustomerFile\catalog\view\javascript\jquery\colorpicker\js\colorpicker.js" />
+    <Content Include="CustomerFile\catalog\view\javascript\jquery\datetimepicker\bootstrap-datetimepicker.min.css" />
+    <Content Include="CustomerFile\catalog\view\javascript\jquery\datetimepicker\bootstrap-datetimepicker.min.js" />
+    <Content Include="CustomerFile\catalog\view\javascript\jquery\datetimepicker\moment.js" />
+    <Content Include="CustomerFile\catalog\view\javascript\jquery\elevatezoom\elevatezoom-min.js" />
+    <Content Include="CustomerFile\catalog\view\javascript\jquery\jquery-2.1.1.min.js" />
+    <Content Include="CustomerFile\catalog\view\javascript\jquery\magnific\jquery.magnific-popup.min.js" />
+    <Content Include="CustomerFile\catalog\view\javascript\jquery\magnific\magnific-popup.css" />
+    <Content Include="CustomerFile\catalog\view\javascript\jquery\owl-carousel\owl.carousel.css" />
+    <Content Include="CustomerFile\catalog\view\javascript\jquery\owl-carousel\owl.carousel.min.js" />
+    <Content Include="CustomerFile\catalog\view\javascript\jquery\pavblog_script.js" />
+    <Content Include="CustomerFile\catalog\view\javascript\layerslider\jquery.themepunch.plugins.min.js" />
+    <Content Include="CustomerFile\catalog\view\javascript\layerslider\jquery.themepunch.revolution.min.js" />
+    <Content Include="CustomerFile\catalog\view\js\analytics.js" />
+    <Content Include="CustomerFile\catalog\view\js\jquery-migrate-1.0.0.js" />
+    <Content Include="CustomerFile\catalog\view\js\widget_v2.142.js" />
+    <Content Include="CustomerFile\catalog\view\theme\megashop\image\pavmap\cluster-m1.png" />
+    <Content Include="CustomerFile\catalog\view\theme\megashop\image\shop-cart.png" />
+    <Content Include="CustomerFile\catalog\view\theme\megashop\javascript\common.js" />
+    <Content Include="CustomerFile\catalog\view\theme\megashop\stylesheet\bootstrap.css" />
+    <Content Include="CustomerFile\catalog\view\theme\megashop\stylesheet\font.css" />
+    <Content Include="CustomerFile\catalog\view\theme\megashop\stylesheet\paneltool.css" />
+    <Content Include="CustomerFile\catalog\view\theme\megashop\stylesheet\pavblog.css" />
+    <Content Include="CustomerFile\catalog\view\theme\megashop\stylesheet\pavmap.css" />
+    <Content Include="CustomerFile\catalog\view\theme\megashop\stylesheet\pavnewsletter.css" />
+    <Content Include="CustomerFile\catalog\view\theme\megashop\stylesheet\pavreassurance.css" />
+    <Content Include="CustomerFile\catalog\view\theme\megashop\stylesheet\sliderlayer\assets\left.png" />
+    <Content Include="CustomerFile\catalog\view\theme\megashop\stylesheet\sliderlayer\assets\loader.gif" />
+    <Content Include="CustomerFile\catalog\view\theme\megashop\stylesheet\sliderlayer\assets\right.png" />
+    <Content Include="CustomerFile\catalog\view\theme\megashop\stylesheet\sliderlayer\assets\timer.png" />
+    <Content Include="CustomerFile\catalog\view\theme\megashop\stylesheet\sliderlayer\css\typo.css" />
+    <Content Include="CustomerFile\catalog\view\theme\megashop\stylesheet\stylesheet.css" />
+    <Content Include="CustomerFile\images\1.png" />
+    <Content Include="CustomerFile\images\2-01.png" />
+    <Content Include="CustomerFile\images\2.png" />
+    <Content Include="CustomerFile\images\3.png" />
+    <Content Include="CustomerFile\images\4.png" />
+    <Content Include="CustomerFile\images\bg.jpg" />
+    <Content Include="CustomerFile\images\Duoc si trung hoc.png" />
+    <Content Include="CustomerFile\images\giam-can-cho-dan-van-phong.png" />
+    <Content Include="CustomerFile\images\images%282%29.jpg" />
+    <Content Include="CustomerFile\images\logo.png" />
+    <Content Include="CustomerFile\images\Nhan vien giao hang.png" />
+    <Content Include="CustomerFile\images\nhan vien kho.png" />
+    <Content Include="CustomerFile\images\NV dieu phoi don hang.png" />
+    <Content Include="CustomerFile\images\phát triển HR.jpg" />
+    <Content Include="CustomerFile\images\picman-3.png" />
+    <Content Include="CustomerFile\images\Purchasing.jpg" />
+    <Content Include="CustomerFile\images\story3.png" />
+    <Content Include="CustomerFile\image\cache\catalog\hinh\P07026-400x200.png" />
+    <Content Include="CustomerFile\image\cache\catalog\hinh\P07027-400x200.png" />
+    <Content Include="CustomerFile\image\capcha.png" />
+    <Content Include="CustomerFile\image\catalog\banner\3.png" />
+    <Content Include="CustomerFile\image\catalog\banner\banner-khautrang.png" />
+    <Content Include="CustomerFile\image\catalog\banner\gioithieu.png" />
+    <Content Include="CustomerFile\image\catalog\banner\quangcao1.png" />
+    <Content Include="CustomerFile\image\catalog\banner\quangcao2.png" />
+    <Content Include="CustomerFile\image\catalog\banner\repeat-y.png" />
+    <Content Include="CustomerFile\image\catalog\logo\logo.jpg" />
+    <Content Include="CustomerFile\image\data\paypal.png" />
+    <Content Include="CustomerFile\image\data\slide_image.jpg" />
+    <Content Include="CustomerFile\image\flags\gb.png" />
+    <Content Include="CustomerFile\image\flags\vn.png" />
+    <Content Include="CustomerFile\image\loading_infinite.gif" />
+    <Content Include="CustomerFile\image\logo.jpg" />
+    <Content Include="CustomerFile\image\slide1.png" />
+    <Content Include="CustomerFile\image\slide2.png" />
+    <Content Include="CustomerFile\image\slide3.png" />
+    <Content Include="CustomerFile\sanpham\sp1.jpg" />
+    <Content Include="CustomerFile\sanpham\sp2.jpg" />
+    <Content Include="CustomerFile\sanpham\sp3.jpg" />
+    <Content Include="CustomerFile\sanpham\sp4.jpg" />
+    <Content Include="CustomerFile\Scripts\bootstrap.js" />
+    <Content Include="CustomerFile\Scripts\jquery-1.10.2.js" />
+    <Content Include="CustomerFile\Scripts\jquery.countTo.js" />
+    <Content Include="CustomerFile\Scripts\jquery.waypoints.min.js" />
+    <Content Include="CustomerFile\Scripts\modernizr-2.6.2.js" />
+    <Content Include="CustomerFile\Scripts\parallax.min.js" />
+    <Content Include="CustomerFile\Scripts\respond.js" />
+    <Content Include="CustomerFile\Scripts\site.js" />
+    <Content Include="CustomerFile\style-slider\ga.js" />
+    <Content Include="CustomerFile\style-slider\idangerous.swiper.css" />
+    <Content Include="CustomerFile\style-slider\idangerous.swiper.js" />
+    <Content Include="CustomerFile\style-slider\main.css" />
+    <Content Include="CustomerFile\style-slider\main.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="CustomerFile\catalog\view\javascript\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="CustomerFile\catalog\view\theme\megashop\fonts\ShrutiRegular\shruti-webfont.woff" />
+    <Content Include="CustomerFile\fonts\fontawesome-webfont.woff" />
+    <Content Include="catalog\view\javascript\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="catalog\view\theme\megashop\fonts\ShrutiRegular\shruti-webfont.woff" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="image\cache\catalog\hinh\P07026-400x200.png" />
+    <Content Include="image\cache\catalog\hinh\P07027-400x200.png" />
+    <Content Include="image\capcha.png" />
+    <Content Include="image\catalog\banner\3.png" />
+    <Content Include="image\catalog\banner\banner-khautrang.png" />
+    <Content Include="image\catalog\banner\gioithieu.png" />
+    <Content Include="image\catalog\banner\quangcao1.png" />
+    <Content Include="image\catalog\banner\quangcao2.png" />
+    <Content Include="image\catalog\banner\repeat-y.png" />
+    <Content Include="image\catalog\logo\logo.jpg" />
+    <Content Include="image\data\paypal.png" />
+    <Content Include="image\data\slide_image.jpg" />
+    <Content Include="image\flags\gb.png" />
+    <Content Include="image\flags\vn.png" />
+    <Content Include="image\loading_infinite.gif" />
+    <Content Include="image\logo.jpg" />
+    <Content Include="image\slide1.png" />
+    <Content Include="image\slide2.png" />
+    <Content Include="image\slide3.png" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -310,9 +482,18 @@
     <Content Include="Views\Product\Create.cshtml" />
     <Content Include="Views\Product\Edit.cshtml" />
     <Content Include="Views\Product\Delete.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Category\Details.cshtml" />
+    <Content Include="Views\Category\Create.cshtml" />
+    <Content Include="Views\Category\Edit.cshtml" />
+    <Content Include="Views\Category\Delete.cshtml" />
+    <Content Include="Views\Product\ViewIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="CustomerFile\image\cache\catalog\sanpham\" />
+    <Folder Include="image\cache\catalog\sanpham\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

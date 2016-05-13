@@ -1,7 +1,8 @@
-﻿@model IEnumerable<DataModel.Product>
+﻿@model IEnumerable<BusinessEntities.ProductEntity>
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <h2>Index</h2>
@@ -71,9 +72,9 @@
             @Html.DisplayFor(modelItem => item.NumberInStock)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Edit", "Edit", new { id=item.Product_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Product_ID  }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Product_ID  })
         </td>
     </tr>
 }

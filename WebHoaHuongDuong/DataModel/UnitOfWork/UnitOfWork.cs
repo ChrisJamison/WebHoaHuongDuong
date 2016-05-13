@@ -61,6 +61,15 @@ namespace DataModel.UnitOfWork
             }
         }
 
+        public GenericRepository<Category> CategoryRepository
+        {
+            get
+            {
+                    this._categoryRepository = new GenericRepository<Category>(_context);
+                return _categoryRepository;
+            }
+        }
+
         public GenericRepository<Customer> CustomerRepository
         {
             get

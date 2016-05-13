@@ -6,28 +6,40 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using DataModel;
+using BusinessServices;
+using BusinessEntities;
 
 namespace WebHoaHuongDuong.Controllers
 {
     public class ProductController : Controller
     {
-        private WebHoaHuongDuongDBEntities db = new WebHoaHuongDuongDBEntities();
+        private readonly IProductServices _iProductServices;
+        private readonly ICategoryServices _iCategoryServices;
 
+        public ProductController(IProductServices iProductServices, ICategoryServices iCategoryServices)
+        {
+            this._iProductServices = iProductServices;
+            this._iCategoryServices = iCategoryServices;
+        }
         //
         // GET: /Product/
 
         public ActionResult Index()
         {
-            var products = db.Products.Include(p => p.Category);
+            var products = _iProductServices.GetAllProduct();
             return View(products.ToList());
         }
 
+        public ActionResult ViewIndex()
+        {
+            return View();
+        }
         //
         // GET: /Product/Details/5
 
         public ActionResult Details(int id = 0)
         {
-            Product product = db.Products.Find(id);
+            ProductEntity product = _iProductServices.GetProductById(id);
             if (product == null)
             {
                 return HttpNotFound();
@@ -40,7 +52,8 @@ namespace WebHoaHuongDuong.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.Category_ID = new SelectList(db.Categories, "Category_ID", "Name");
+            var category = _iCategoryServices.GetAllCategory();
+            ViewBag.Category_ID = new SelectList(category, "Category_ID", "Name");
             return View();
         }
 
@@ -49,17 +62,16 @@ namespace WebHoaHuongDuong.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Product product)
+        public ActionResult Create(ProductEntity productEntity)
         {
             if (ModelState.IsValid)
             {
-                db.Products.Add(product);
-                db.SaveChanges();
+                _iProductServices.CreateProduct(productEntity);
                 return RedirectToAction("Index");
             }
-
-            ViewBag.Category_ID = new SelectList(db.Categories, "Category_ID", "Name", product.Category_ID);
-            return View(product);
+            var category = _iCategoryServices.GetAllCategory();
+            ViewBag.Category_ID = new SelectList(category, "Category_ID", "Name", productEntity.Category_ID);
+            return View(productEntity);
         }
 
         //
@@ -67,12 +79,13 @@ namespace WebHoaHuongDuong.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            Product product = db.Products.Find(id);
+            ProductEntity product = _iProductServices.GetProductById(id);
+            var category = _iCategoryServices.GetAllCategory();
             if (product == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.Category_ID = new SelectList(db.Categories, "Category_ID", "Name", product.Category_ID);
+            ViewBag.Category_ID = new SelectList(category, "Category_ID", "Name", product.Category_ID);
             return View(product);
         }
 
@@ -81,16 +94,16 @@ namespace WebHoaHuongDuong.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Product product)
+        public ActionResult Edit(ProductEntity productEntity)
         {
+            var category = _iCategoryServices.GetAllCategory();
             if (ModelState.IsValid)
             {
-                db.Entry(product).State = EntityState.Modified;
-                db.SaveChanges();
+                _iProductServices.UpdateProduct(productEntity);
                 return RedirectToAction("Index");
             }
-            ViewBag.Category_ID = new SelectList(db.Categories, "Category_ID", "Name", product.Category_ID);
-            return View(product);
+            ViewBag.Category_ID = new SelectList(category, "Category_ID", "Name", productEntity.Category_ID);
+            return View(productEntity);
         }
 
         //
@@ -98,7 +111,7 @@ namespace WebHoaHuongDuong.Controllers
 
         public ActionResult Delete(int id = 0)
         {
-            Product product = db.Products.Find(id);
+            ProductEntity product = _iProductServices.GetProductById(id);
             if (product == null)
             {
                 return HttpNotFound();
@@ -113,16 +126,15 @@ namespace WebHoaHuongDuong.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Product product = db.Products.Find(id);
-            db.Products.Remove(product);
-            db.SaveChanges();
+            bool success = _iProductServices.DeleteProduct(id);
+
+            if (!success)
+            {
+                ModelState.AddModelError("error", "delete fail");
+                return View();
+            }
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            db.Dispose();
-            base.Dispose(disposing);
-        }
     }
 }

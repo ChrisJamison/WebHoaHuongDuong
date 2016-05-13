@@ -1,8 +1,8 @@
-D:\Project\WebHoaHuongDuong\WebHoaHuongDuong\DataModel\obj\Debug\DataModel.csprojResolveAssemblyReference.cache
 D:\Project\WebHoaHuongDuong\WebHoaHuongDuong\DataModel\bin\Debug\DataModel.dll.config
 D:\Project\WebHoaHuongDuong\WebHoaHuongDuong\DataModel\bin\Debug\DataModel.dll
 D:\Project\WebHoaHuongDuong\WebHoaHuongDuong\DataModel\bin\Debug\DataModel.pdb
 D:\Project\WebHoaHuongDuong\WebHoaHuongDuong\DataModel\bin\Debug\EntityFramework.dll
 D:\Project\WebHoaHuongDuong\WebHoaHuongDuong\DataModel\bin\Debug\EntityFramework.xml
+D:\Project\WebHoaHuongDuong\WebHoaHuongDuong\DataModel\obj\Debug\DataModel.csprojResolveAssemblyReference.cache
 D:\Project\WebHoaHuongDuong\WebHoaHuongDuong\DataModel\obj\Debug\DataModel.dll
 D:\Project\WebHoaHuongDuong\WebHoaHuongDuong\DataModel\obj\Debug\DataModel.pdb
