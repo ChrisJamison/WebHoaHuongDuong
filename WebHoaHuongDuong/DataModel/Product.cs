@@ -27,7 +27,7 @@ namespace DataModel
         public string Image { get; set; }
         public Nullable<System.DateTime> DateUpload { get; set; }
         public Nullable<int> Price { get; set; }
-        public int NumberInStock { get; set; }
+        public Nullable<int> NumberInStock { get; set; }
     
         public virtual ICollection<CartDetail> CartDetails { get; set; }
         public virtual Category Category { get; set; }

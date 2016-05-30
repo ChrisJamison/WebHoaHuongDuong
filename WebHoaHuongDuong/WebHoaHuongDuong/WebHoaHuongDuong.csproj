@@ -212,6 +212,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -309,6 +312,28 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="css\block_search.css" />
+    <Content Include="css\ch-css.css" />
+    <Content Include="css\contentdetail.css" />
+    <Content Include="css\css.css" />
+    <Content Include="css\css_1.css" />
+    <Content Include="css\css_2.css" />
+    <Content Include="css\css_3.css" />
+    <Content Include="css\index.css" />
+    <Content Include="css\jquery-ui.css" />
+    <Content Include="css\jquery.fancybox-thumbs.css" />
+    <Content Include="css\jquery.fancybox.css" />
+    <Content Include="css\jquery.mCustomScrollbar.css" />
+    <Content Include="css\list_product.css" />
+    <Content Include="css\main.css" />
+    <Content Include="css\main2.css" />
+    <Content Include="css\newsbar.css" />
+    <Content Include="css\product_xemnhanh.css" />
+    <Content Include="css\skitter.styles.css" />
+    <Content Include="css\sosanh.css" />
+    <Content Include="css\sprites_all.css" />
+    <Content Include="css\toolbarstype.css" />
+    <Content Include="css\tooltipPopup_web.css" />
     <Content Include="CustomerFile\catalog\view\javascript\addthis_widget.js" />
     <Content Include="CustomerFile\catalog\view\javascript\bootstrap\js\bootstrap.min.js" />
     <Content Include="CustomerFile\catalog\view\javascript\common.js" />
@@ -409,6 +434,9 @@
     <Content Include="CustomerFile\fonts\fontawesome-webfont.woff" />
     <Content Include="catalog\view\javascript\font-awesome\fonts\fontawesome-webfont.woff" />
     <Content Include="catalog\view\theme\megashop\fonts\ShrutiRegular\shruti-webfont.woff" />
+    <Content Include="fonts\b9QBgL0iMZfDSpmcXcE8nHm2hrkyco9jQ3NKMXpgOBg.woff2" />
+    <Content Include="fonts\OpenSans-CondBold.ttf" />
+    <Content Include="fonts\Roboto-Bold.ttf" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="image\cache\catalog\hinh\P07026-400x200.png" />
     <Content Include="image\cache\catalog\hinh\P07027-400x200.png" />
@@ -429,6 +457,50 @@
     <Content Include="image\slide1.png" />
     <Content Include="image\slide2.png" />
     <Content Include="image\slide3.png" />
+    <Content Include="imgs\arrow-down.png" />
+    <Content Include="imgs\arrow-t.png" />
+    <Content Include="imgs\cart-bg.png" />
+    <Content Include="imgs\cart.png" />
+    <Content Include="imgs\cart_icon.png" />
+    <Content Include="imgs\footer-bg.jpg" />
+    <Content Include="imgs\footer-top.png" />
+    <Content Include="imgs\grid.png" />
+    <Content Include="imgs\icon.png" />
+    <Content Include="imgs\icon_len1.png" />
+    <Content Include="imgs\icon_xoxuong1.png" />
+    <Content Include="imgs\list.png" />
+    <Content Include="imgs\my-icon.png" />
+    <Content Include="imgs\price-bg.png" />
+    <Content Include="imgs\price-top.png" />
+    <Content Include="imgs\search.png" />
+    <Content Include="imgs\sprites.png" />
+    <Content Include="js\bnc_scroll.js" />
+    <Content Include="js\jcarousellite_1.0.1c4.js" />
+    <Content Include="js\jquery-1.7.1.min.js" />
+    <Content Include="js\jquery-ui.js" />
+    <Content Include="js\jquery.elevatezoom.js" />
+    <Content Include="js\jquery.fancybox-thumbs.js" />
+    <Content Include="js\jquery.fancybox.js" />
+    <Content Include="js\jquery.jcarousel.js" />
+    <Content Include="js\jquery.limit.js" />
+    <Content Include="js\jquery.mCustomScrollbar.concat.min.js" />
+    <Content Include="js\jquery.mousewheel.js" />
+    <Content Include="js\jquery.pjax.js" />
+    <Content Include="js\jquery.RotateImageMenu.js" />
+    <Content Include="js\jquery.simplemodal.js" />
+    <Content Include="js\jquery.skitter.min.js" />
+    <Content Include="js\jquery.transform-0.9.3.min_.js" />
+    <Content Include="js\number_format.js" />
+    <Content Include="js\product_xemnhanh.js" />
+    <Content Include="js\stats-bmd1eWVuaGFteXww.js" />
+    <Content Include="js\tipsy-1.0.0a.js" />
+    <Content Include="js\tooltipPopup.js" />
+    <Content Include="js\widget.js" />
+    <Content Include="js\y-lab.js" />
+    <Content Include="sanpham\sp1.jpg" />
+    <Content Include="sanpham\sp2.jpg" />
+    <Content Include="sanpham\sp3.jpg" />
+    <Content Include="sanpham\sp4.jpg" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -527,6 +599,12 @@
     <Content Include="Views\Shared\_FaceBook.cshtml" />
     <Content Include="Views\Shared\_TiGia.cshtml" />
     <Content Include="Views\Shared\_ThongKe.cshtml" />
+    <Content Include="Views\Product\_SanPhamMoiIndex.cshtml" />
+    <Content Include="Views\Product\_SanPhamXemNhieuIndex.cshtml" />
+    <Content Include="Views\Product\_SanPhamBanChayIndex.cshtml" />
+    <Content Include="Views\Product\_MyPhamIndex.cshtml" />
+    <Content Include="Views\Product\_SuaXachTayChoBeYeuIndex.cshtml" />
+    <Content Include="Views\Product\_ThucPhamDinhDuongIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,4 +1,5 @@
-﻿<div class="content-top">
+﻿@model BusinessServices.Menu
+<div class="content-top">
     <div class="content_top_border">
         <!--top-->
         <div class="header-top-inner">
@@ -7,45 +8,34 @@
                 <ul class="topmenu">
                     <li>
                         <div class="icon_menu">
-                            <img src="images/141800946593.png"></div>
+                            <img src="imgs/1.png">
+                        </div>
                         <a class="active" href="http://mapu.vn/home/">TRANG CHỦ</a>
                     </li>
                     <li>
                         <div class="icon_menu">
-                            <img src="images/141800868147.png"></div>
+                            <img src="imgs/2.png">
+                        </div>
                         <a class="" href="http://mapu.vn/gioi_thieu/">GIỚI THIỆU</a>
                     </li>
                     <li class="haveSub">
                         <div class="icon_menu">
-                            <img src="images/141800879631.png"></div>
+                            <img src="imgs/3.png">
+                        </div>
                         <a class="" href="http://mapu.vn/san_pham/">SẢN PHẨM</a>
                         <ul>
-                            <li><span class="itemmn"></span><a style="color: #595959" href="http://mapu.vn/my-pham-uc-xach-tay-2-1-754380.html">&diams; Mỹ phẩm </a>
-                            </li>
-                            <li><span class="itemmn"></span><a style="color: #595959" href="http://mapu.vn/my-pham-uc-xach-tay-2-1-754380.html">&diams; Sữa xách tay cho bé yêu </a>
-                            </li>
-                            <li><span class="itemmn"></span><a style="color: #595959" href="http://mapu.vn/my-pham-uc-xach-tay-2-1-754380.html">&diams; Thực phẩm dinh dưỡng </a>
-                            </li>
-                            <li><span class="itemmn"></span><a style="color: #595959" href="http://mapu.vn/my-pham-uc-xach-tay-2-1-754380.html">&diams; Thực phẩm chức năng </a>
-                            </li>
-                            <li><span class="itemmn"></span><a style="color: #595959" href="http://mapu.vn/my-pham-uc-xach-tay-2-1-754380.html">&diams; Collagen, Placenta làm đẹp </a>
-                            </li>
-                            <li><span class="itemmn"></span><a style="color: #595959" href="http://mapu.vn/my-pham-uc-xach-tay-2-1-754380.html">&diams; Đồ dùng gia đình </a>
-                            </li>
-                            <li><span class="itemmn"></span><a style="color: #595959" href="http://mapu.vn/my-pham-uc-xach-tay-2-1-754380.html">&diams; Cho bé yêu</a>
-                            </li>
-                            <li><span class="itemmn"></span><a style="color: #595959" href="http://mapu.vn/my-pham-uc-xach-tay-2-1-754380.html">&diams; Thời trang cho bạn </a>
-                            </li>
-                            <li><span class="itemmn"></span><a style="color: #595959" href="http://mapu.vn/my-pham-uc-xach-tay-2-1-754380.html">&diams; Sản phẩm từ Hàn Quốc </a>
-                            </li>
-                            <li><span class="itemmn"></span><a style="color: #595959" href="http://mapu.vn/my-pham-uc-xach-tay-2-1-754380.html">&diams; Hàng Order </a>
-                            </li>
+                            @foreach (var item in Model.GetCategoryLevel1)
+                            {
+                                <li><span class="itemmn"></span><a style="color: #595959" href="http://mapu.vn/my-pham-uc-xach-tay-2-1-754380.html">&diams; @item.Name </a>
+                                </li>
+                            }
 
                         </ul>
                     </li>
                     <li class="haveSub">
                         <div class="icon_menu">
-                            <img src="images/143105432943.png"></div>
+                            <img src="imgs/4.png">
+                        </div>
                         <a class="" href="http://mapu.vn/tin-tuc-2.html">TIN TỨC</a>
                         <ul>
                             <li><span class="itemmn"></span><a style="color: #595959" href="http://mapu.vn/thuc-pham-2.html">&diams; Thực phẩm</a>
@@ -58,12 +48,14 @@
                     </li>
                     <li>
                         <div class="icon_menu">
-                            <img src="images/141800929562.png"></div>
+                            <img src="imgs/5.png">
+                        </div>
                         <a class="" href="http://mapu.vn/lien_he/">LIÊN HỆ</a>
                     </li>
                     <li class="haveSub">
                         <div class="icon_menu">
-                            <img src="images/143105434834.png"></div>
+                            <img src="imgs/6.png">
+                        </div>
                         <a class="" href="http://www.lamchame.com/forum/">KHUYẾN MẠI</a>
                         <ul>
                             <li><span class="itemmn"></span><a style="color: #595959" href="">&diams; Khuyến mại trong tháng</a>
