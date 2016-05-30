@@ -1,0 +1,31 @@
+﻿@model IEnumerable<BusinessEntities.ProductEntity>
+
+<div style="margin-bottom: 30px; overflow: hidden">
+    <div class="tit_sp_home"><a href="http://mapu.vn/san_pham/">Sản phẩm mới</a> </div>
+
+    <div class="content_xemnhanh">
+        @foreach (var item in Model)
+        {
+            <div class="sp_pro relative part item_xemnhanh" dataload="MTQ5NzYyMw==">
+                <div class="box_sp">
+                    <div class="box_img_sp">
+                        <h3 class="name_sp"><a id="tenss_1497623" class="ten_sp " title="Kem chống nắng Ego Sunsense SPF 50+ cho mặt 75g" href="http://mapu.vn/kem-chong-nang-ego-sunsense-spf-50-cho-mat-75g--1-1-1497623.html">@item.Name</a></h3>
+                        <div class="btnxemnhanh"><a id='id_1497623' data-pjax='#huongcontent' class='xn-1497623 ' onclick="loadProduct('1497623','','http://mapu.vn','new')" href="http://mapu.vn/kem-chong-nang-ego-sunsense-spf-50-cho-mat-75g--1-1-1497623.html">Xem nhanh</a></div>
+                        <div class="bg_comparison_tr"><span id="ss_1497623_0" class="myicon btn-ss"></span></div>
+                        <div class="khung">
+                            <a href="http://mapu.vn/kem-chong-nang-ego-sunsense-spf-50-cho-mat-75g--1-1-1497623.html" class="bnc_tooltips" data-id="1497623">
+                                <img class="img" src='~/@item.Image.Trim()' onerror="this.onerror=null;this.src='https://upload.webbnc.net/view.php?image=upload/web/51/513168/product/2016/04/21/10/52/146123594563.jpg&mode=resize&size=245x235'" alt="Kem chống nắng Ego Sunsense SPF 50+ cho mặt 75g" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="pos_mr">
+                    <div class="price_new">380.000 VNĐ</div>
+                    <div class="chitiet_sp"><a href="http://mapu.vn/kem-chong-nang-ego-sunsense-spf-50-cho-mat-75g--1-1-1497623.html" class="">đặt mua</a></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        }
+    </div>
+
+</div>

@@ -1,0 +1,14 @@
+ Volume in drive D is LEARN
+ Volume Serial Number is DC2A-3060
+
+ Directory of D:\E-Commerce\UI\s?n ph?m\10 H…ng Order
+
+05/23/2016  05:21 PM    <DIR>          .
+05/23/2016  05:21 PM    <DIR>          ..
+05/15/2016  09:00 PM           142,457 IMG_1530.JPG
+05/15/2016  09:00 PM           260,730 IMG_1531.JPG
+05/15/2016  09:00 PM           153,112 IMG_1532.JPG
+05/15/2016  09:00 PM           361,948 IMG_1533.JPG
+05/23/2016  05:21 PM                 0 info.txt
+               5 File(s)        918,247 bytes
+               2 Dir(s)  45,695,856,640 bytes free
