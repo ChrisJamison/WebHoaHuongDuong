@@ -11,3 +11,16 @@ D:\Project\WebHoaHuongDuong\WebHoaHuongDuong\BusinessServices\bin\Debug\EntityFr
 D:\Project\WebHoaHuongDuong\WebHoaHuongDuong\BusinessServices\obj\Debug\BusinessServices.csprojResolveAssemblyReference.cache
 D:\Project\WebHoaHuongDuong\WebHoaHuongDuong\BusinessServices\obj\Debug\BusinessServices.dll
 D:\Project\WebHoaHuongDuong\WebHoaHuongDuong\BusinessServices\obj\Debug\BusinessServices.pdb
+D:\Project\DoAnChuyenNganh\WebHoaHuongDuong.git\WebHoaHuongDuong\BusinessServices\bin\Debug\BusinessServices.dll
+D:\Project\DoAnChuyenNganh\WebHoaHuongDuong.git\WebHoaHuongDuong\BusinessServices\bin\Debug\BusinessServices.pdb
+D:\Project\DoAnChuyenNganh\WebHoaHuongDuong.git\WebHoaHuongDuong\BusinessServices\bin\Debug\AutoMapper.dll
+D:\Project\DoAnChuyenNganh\WebHoaHuongDuong.git\WebHoaHuongDuong\BusinessServices\bin\Debug\BusinessEntities.dll
+D:\Project\DoAnChuyenNganh\WebHoaHuongDuong.git\WebHoaHuongDuong\BusinessServices\bin\Debug\DataModel.dll
+D:\Project\DoAnChuyenNganh\WebHoaHuongDuong.git\WebHoaHuongDuong\BusinessServices\bin\Debug\EntityFramework.dll
+D:\Project\DoAnChuyenNganh\WebHoaHuongDuong.git\WebHoaHuongDuong\BusinessServices\bin\Debug\BusinessEntities.pdb
+D:\Project\DoAnChuyenNganh\WebHoaHuongDuong.git\WebHoaHuongDuong\BusinessServices\bin\Debug\DataModel.pdb
+D:\Project\DoAnChuyenNganh\WebHoaHuongDuong.git\WebHoaHuongDuong\BusinessServices\bin\Debug\AutoMapper.xml
+D:\Project\DoAnChuyenNganh\WebHoaHuongDuong.git\WebHoaHuongDuong\BusinessServices\bin\Debug\EntityFramework.xml
+D:\Project\DoAnChuyenNganh\WebHoaHuongDuong.git\WebHoaHuongDuong\BusinessServices\obj\Debug\BusinessServices.csprojResolveAssemblyReference.cache
+D:\Project\DoAnChuyenNganh\WebHoaHuongDuong.git\WebHoaHuongDuong\BusinessServices\obj\Debug\BusinessServices.dll
+D:\Project\DoAnChuyenNganh\WebHoaHuongDuong.git\WebHoaHuongDuong\BusinessServices\obj\Debug\BusinessServices.pdb

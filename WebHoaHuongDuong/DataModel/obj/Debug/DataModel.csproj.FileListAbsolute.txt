@@ -6,3 +6,11 @@ D:\Project\WebHoaHuongDuong\WebHoaHuongDuong\DataModel\bin\Debug\EntityFramework
 D:\Project\WebHoaHuongDuong\WebHoaHuongDuong\DataModel\obj\Debug\DataModel.csprojResolveAssemblyReference.cache
 D:\Project\WebHoaHuongDuong\WebHoaHuongDuong\DataModel\obj\Debug\DataModel.dll
 D:\Project\WebHoaHuongDuong\WebHoaHuongDuong\DataModel\obj\Debug\DataModel.pdb
+D:\Project\DoAnChuyenNganh\WebHoaHuongDuong.git\WebHoaHuongDuong\DataModel\bin\Debug\DataModel.dll.config
+D:\Project\DoAnChuyenNganh\WebHoaHuongDuong.git\WebHoaHuongDuong\DataModel\bin\Debug\DataModel.dll
+D:\Project\DoAnChuyenNganh\WebHoaHuongDuong.git\WebHoaHuongDuong\DataModel\bin\Debug\DataModel.pdb
+D:\Project\DoAnChuyenNganh\WebHoaHuongDuong.git\WebHoaHuongDuong\DataModel\bin\Debug\EntityFramework.dll
+D:\Project\DoAnChuyenNganh\WebHoaHuongDuong.git\WebHoaHuongDuong\DataModel\bin\Debug\EntityFramework.xml
+D:\Project\DoAnChuyenNganh\WebHoaHuongDuong.git\WebHoaHuongDuong\DataModel\obj\Debug\DataModel.csprojResolveAssemblyReference.cache
+D:\Project\DoAnChuyenNganh\WebHoaHuongDuong.git\WebHoaHuongDuong\DataModel\obj\Debug\DataModel.dll
+D:\Project\DoAnChuyenNganh\WebHoaHuongDuong.git\WebHoaHuongDuong\DataModel\obj\Debug\DataModel.pdb

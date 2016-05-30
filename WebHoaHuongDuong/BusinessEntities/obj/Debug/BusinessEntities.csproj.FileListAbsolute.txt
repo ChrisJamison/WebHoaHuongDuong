@@ -7,3 +7,12 @@ D:\Project\WebHoaHuongDuong\WebHoaHuongDuong\BusinessEntities\bin\Debug\EntityFr
 D:\Project\WebHoaHuongDuong\WebHoaHuongDuong\BusinessEntities\obj\Debug\BusinessEntities.csprojResolveAssemblyReference.cache
 D:\Project\WebHoaHuongDuong\WebHoaHuongDuong\BusinessEntities\obj\Debug\BusinessEntities.dll
 D:\Project\WebHoaHuongDuong\WebHoaHuongDuong\BusinessEntities\obj\Debug\BusinessEntities.pdb
+D:\Project\DoAnChuyenNganh\WebHoaHuongDuong.git\WebHoaHuongDuong\BusinessEntities\bin\Debug\BusinessEntities.dll
+D:\Project\DoAnChuyenNganh\WebHoaHuongDuong.git\WebHoaHuongDuong\BusinessEntities\bin\Debug\BusinessEntities.pdb
+D:\Project\DoAnChuyenNganh\WebHoaHuongDuong.git\WebHoaHuongDuong\BusinessEntities\bin\Debug\DataModel.dll
+D:\Project\DoAnChuyenNganh\WebHoaHuongDuong.git\WebHoaHuongDuong\BusinessEntities\bin\Debug\EntityFramework.dll
+D:\Project\DoAnChuyenNganh\WebHoaHuongDuong.git\WebHoaHuongDuong\BusinessEntities\bin\Debug\DataModel.pdb
+D:\Project\DoAnChuyenNganh\WebHoaHuongDuong.git\WebHoaHuongDuong\BusinessEntities\bin\Debug\EntityFramework.xml
+D:\Project\DoAnChuyenNganh\WebHoaHuongDuong.git\WebHoaHuongDuong\BusinessEntities\obj\Debug\BusinessEntities.csprojResolveAssemblyReference.cache
+D:\Project\DoAnChuyenNganh\WebHoaHuongDuong.git\WebHoaHuongDuong\BusinessEntities\obj\Debug\BusinessEntities.dll
+D:\Project\DoAnChuyenNganh\WebHoaHuongDuong.git\WebHoaHuongDuong\BusinessEntities\obj\Debug\BusinessEntities.pdb

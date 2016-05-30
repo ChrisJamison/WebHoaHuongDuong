@@ -1,0 +1,89 @@
+﻿<div class="top">
+    <div class="head_top">
+        <div class="login">
+            <ul>
+                <li>
+                    <a href="javascript:void()" id="dangnhap" class="icon_dn">Đăng nhập</a>
+                    <div class="dangnhap1 hide">
+                        <div id="b_login" class="box-support">
+                            <h3 class="title-sup">Đăng nhập vào hệ thống</h3>
+                            <img class="btnclose" src="images/arrow-lg.png" style="position: absolute; top: 23px; right: 23px; cursor: pointer; width: 11px; height: 11px; margin-top: 15px;">
+                            <div class="content-sup">
+                                <div class="img_login">
+                                    <a href="https://id.vatgia.com/dang-nhap/?_cont=http://bncvn.net/sso-aHR0cDovL21hcHUudm4vfGh0dHA6Ly9tYXB1LnZu.html&service=webbnc">
+                                        <img src="images/vg.png">
+                                    </a>
+                                    <a href="http://bncvn.net/dang-nhap-aHR0cDovL21hcHUudm4v.html" style="margin-left: 10px;">
+                                        <img src="images/bnc.png">
+                                    </a>
+                                </div>
+                                <ul class="control_b_login">
+                                    <li><a href="https://id.vatgia.com/dang-nhap/?_cont=http://bncvn.net/sso-aHR0cDovL21hcHUudm4vfGh0dHA6Ly9tYXB1LnZu.html&service=webbnc" class="enter">Đăng nhập với ID Vật Giá</a></li>
+                                    <li><a href="http://bncvn.net/dang-nhap-aHR0cDovL21hcHUudm4v.html" class="enter">Đăng nhập tài khoản BNC</a></li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://id.vatgia.com/dang-ky/?service=webbnc&_cont=http%3A%2F%2Fbncvn.net/tao-web-vg.html" id="dangky" class="icon_dn">&nbsp;Đăng ký</a> </li>
+            </ul>
+        </div>
+        <!--login-->
+        <div class="search">
+            <form method="post" id="idf" action="http://mapu.vn/tim_kiem/sp" name="form_timkiem_sp">
+                <input value="" class="top_input" type="text" placeholder="Tìm kiếm từ khóa..." name="block_name_search" />
+                <a href="javascript:void()" class="nut_search" onclick="javascript:$('#idf').submit();"></a>
+            </form>
+        </div>
+        <!--search-->
+        <div class="cart">
+            <div id="cart_expand"><a class="cart_link" href="javascript:void()">Giỏ hàng:<span id="in_cart"> 0 </span>Sản phẩm</a> </div>
+            <style type="text/css">
+                  </style>
+            <!--[if IE 7]>
+                  <style>
+                     .cart-overlay { display: none; }    
+                  </style>
+                  <![endif]-->
+            <div class="cart-mini" id="cart_mini">
+                <h3 class="title">Giỏ hàng mini</h3>
+                <span class="close" title="Đóng lại"></span>
+                <div id="cart_loader">
+                    <center>Hiện bạn không có sản phẩm nào trong giỏ hàng.</center>
+                </div>
+                <a href="http://mapu.vn/san_pham/cart/1/gio_hang.html" class="cart-enter">Vào giỏ hàng</a>
+            </div>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $('#cart_expand').click(function () {
+                        $('body').append("<div class='cart-overlay'></div>");
+                        $('.cart-overlay').css({
+                            'background': '#222222',
+                            'opacity': '0.5',
+                            'width': $(document).width(),
+                            'height': $(document).height(),
+                            'z-index': 9999,
+                            'position': 'absolute',
+                            'top': '0px',
+                            'left': '0px'
+                        });
+                        $('#cart_mini').show(500);
+                    });
+                    $('.close').click(function () {
+                        $('.cart-overlay').remove();
+                        $('#cart_mini').hide(500);
+                    });
+                });
+            </script>
+        </div>
+        <!--cart-->
+    </div>
+</div>
+<div style="width: 1170px; margin: 0 auto;">
+    <div class="ad_top" style="text-align: center;">
+        <a title="Mapu Shop Hàng xách tay Úc" href="http://mapu.vn">
+            <img src="images/qc_header_0.21412000_1450318485.jpg" width="1170px" height="117px" /></a>
+    </div>
+</div>
